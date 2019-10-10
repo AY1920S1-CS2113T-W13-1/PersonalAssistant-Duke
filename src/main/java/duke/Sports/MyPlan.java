@@ -1,4 +1,5 @@
 package duke.sports;
+
 import duke.Data.Storage;
 
 import java.io.File;
@@ -13,7 +14,7 @@ import java.util.Set;
 
 import java.lang.Math;
 
- /**
+/**
  * Loads a training plan from a txt file, or create a new plan, where we can do whatever with the plan
  */
 
@@ -30,15 +31,11 @@ public class MyPlan {
     private int reps;
     private int division;
 
-     public MyPlan() throws FileNotFoundException {
-         filePath = ".\\src\\main\\java\\duke\\Sports\\plan.txt";
-         File f = new File(filePath);
-         fileInput = new Scanner(f);
-         //division = new Storage(filePath).loadPMap(getMap());
-     }
-
-    public MyPlan() {
-
+    public MyPlan() throws FileNotFoundException {
+        filePath = ".\\src\\main\\java\\duke\\Sports\\plan.txt";
+        File f = new File(filePath);
+        fileInput = new Scanner(f);
+        //division = new Storage(filePath).loadPMap(getMap());
     }
 
     public String getName() {
@@ -73,31 +70,14 @@ public class MyPlan {
         return this.list;
     }
 
-     public int getDivision() {
-         return this.division;
-     }
-    public MyPlan(String filePath) throws FileNotFoundException {
-        this.filePath = filePath;
-        File f = new File(filePath);
-        fileInput = new Scanner(f);
-    }
-
-    public String loadPlan(String planNum, String plan_num) {
-        String l1 = fileInput.nextLine();
-        while (fileInput.hasNextLine()) {
-            if (l1.equals("plan_num")) {
-                String[] l2 = fileInput.nextLine().split(" ");
-                MyTraining activity = new MyTraining(l2[0],Integer.parseInt(l2[1]),Integer.parseInt(l2[2]));
-                getList().add(activity);
-            }
-        }
-        return "You have loaded plan " + plan_num + " into the list";
+    public int getDivision() {
+        return this.division;
     }
 
     public int createKey(String intensity, int num) {
-         Intensity i = Intensity.valueOf(intensity);
-         double key = Math.pow(10, i.getValue()) + num;
-         return (int) key;
+        Intensity i = Intensity.valueOf(intensity);
+        double key = Math.pow(10, i.getValue()) + num;
+        return (int) key;
     }
 
     public String clearPlan() {
@@ -121,11 +101,11 @@ public class MyPlan {
         getList().remove(initial);
     }
 
-     /**
-      * Creates an enum for intensity values to restrict it to the specified values.
-      * A set of these values is created to enable easy checking of whether a word is contained in the enum.
-      *
-      */
+    /**
+     * Creates an enum for intensity values to restrict it to the specified values.
+     * A set of these values is created to enable easy checking of whether a word is contained in the enum.
+     *
+     */
     public enum Intensity {
         high(1), moderate(2), relaxed(3);
 
@@ -158,13 +138,13 @@ public class MyPlan {
         }
     }
 
-     public String viewPlan() {
-         String message = "1";
-         for (MyTraining i : getList()) {
-             message += i.toString() + "\n";
-         }
-         return message;
-     }
+    public String viewPlan() {
+        String message = "1";
+        for (MyTraining i : getList()) {
+            message += i.toString() + "\n";
+        }
+        return message;
+    }
 
     public void loadPlan(String intensity, String plan) throws FileNotFoundException {
         if (!Intensity.contains(intensity)) {
@@ -198,13 +178,13 @@ public class MyPlan {
     }
 
     public String deletePlan(String i, int plan_num) {
-         int key = createKey(i, plan_num);
-         if (!getMap().containsKey(key)) {
-             System.out.println("Please input the correct intensity and plan number.");
-         } else {
-             getMap().remove(key);
-             System.out.println("Plan successfully removed.");
-         }
-         return "0";
+        int key = createKey(i, plan_num);
+        if (!getMap().containsKey(key)) {
+            System.out.println("Please input the correct intensity and plan number.");
+        } else {
+            getMap().remove(key);
+            System.out.println("Plan successfully removed.");
+        }
+        return "0";
     }
 }

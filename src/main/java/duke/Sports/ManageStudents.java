@@ -1,4 +1,4 @@
-package duke.Sports;
+package duke.sports;
 
 import java.util.ArrayList;
 
@@ -24,8 +24,6 @@ public class ManageStudents {
     public ManageStudents() {
         studentList = new ArrayList<>();
     }
-
-
 
 //    public void setStudentList(ArrayList<MyStudent> studentList) {
 //        this.studentList = studentList;
