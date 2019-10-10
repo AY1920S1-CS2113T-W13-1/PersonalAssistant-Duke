@@ -2,15 +2,13 @@ package duke.Data;
 
 import duke.Module.TimeSlot;
 import duke.sports.MyClass;
-import duke.Task.After;
-import duke.Task.Deadline;
-import duke.Task.Event;
-import duke.Task.Item;
-import duke.Task.ToDo;
+import duke.sports.MyPlan;
+import duke.sports.MyTraining;
+import duke.Task.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -55,7 +53,7 @@ public class Storage {
             } else {
                 FileWriter fileWriter = new FileWriter(filePath, true);
                 fileWriter.write(type + "-" + e.checkStatus() + "-"
-                    + e.getInfo() + "-" + e.getRawDate() + "\n");
+                        + e.getInfo() + "-" + e.getRawDate() + "\n");
                 fileWriter.close();
             }
         } catch (IOException io) {
@@ -92,33 +90,33 @@ public class Storage {
                 stat = (data[1].equals("1"));
 
                 switch (type) {
-                case "D":
-                    Item deadline = new Deadline(data[2], stat, dateRevert(data[3]));
-                    list.add(deadline);
-                    break;
+                    case "D":
+                        Item deadline = new Deadline(data[2], stat, dateRevert(data[3]));
+                        list.add(deadline);
+                        break;
 
-                case "E":
-                    Item event = new Event(data[2], stat, dateRevert(data[3]));
-                    list.add(event);
-                    break;
+                    case "E":
+                        Item event = new Event(data[2], stat, dateRevert(data[3]));
+                        list.add(event);
+                        break;
 
-                case "T":
-                    Item todo = new ToDo(data[2], stat, data[3]);
-                    list.add(todo);
-                    break;
+                    case "T":
+                        Item todo = new ToDo(data[2], stat, data[3]);
+                        list.add(todo);
+                        break;
 
-                case "A":
-                    Item after = new After(data[2], stat, dateRevert(data[3]));
-                    list.add(after);
-                    break;
+                    case "A":
+                        Item after = new After(data[2], stat, dateRevert(data[3]));
+                        list.add(after);
+                        break;
 
-                case "C":
-                    Item myClass = new MyClass(data[2], stat, data[3]);
-                    list.add(myClass);
-                    break;
+                    case "C":
+                        Item myClass = new MyClass(data[2], stat, data[3]);
+                        list.add(myClass);
+                        break;
 
-                default:
-                    System.out.println("No data");
+                    default:
+                        System.out.println("No data");
                 }
             }
             fileInput.close();
@@ -276,7 +274,7 @@ public class Storage {
             System.out.println("File not found:" + io.getMessage());
         }
     }
-/**
+
     public int loadPMap (Map<Integer, ArrayList<MyTraining>> map) throws FileNotFoundException {
         MyPlan plan = new MyPlan();
         ArrayList<MyTraining> list = new ArrayList<>();
@@ -325,5 +323,5 @@ public class Storage {
 
     public void savePMap() {
         System.out.println("To be confirmed");
-    }*/
+    }
 }
