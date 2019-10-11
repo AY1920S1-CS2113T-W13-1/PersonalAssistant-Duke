@@ -112,6 +112,32 @@ public class ManageStudents {
         }
     }
 
+    public void findStudent(String studentName) {
+        ArrayList<MyStudent> search = new ArrayList<>();
+        for (MyStudent i : getStudentList()) {
+            if (i.getName().contains(studentName)) {
+                search.add(i);
+            }
+        }
+        for (int i = 0; i < search.size(); i++) {
+            System.out.print(i + 1);
+            System.out.println(". " + search.get(i).getName());
+        }
+    }
+//
+//    ArrayList<Task> search = new ArrayList<>();
+//                    for (Task i : taskList.getTaskList()) {
+//        if (i.getDescription().contains(findWord)) {
+//            search.add(i);
+//        }
+//    }
+//
+//                    System.out.println("Here are the matching task in your list: ");
+//                    for (int i = 0; i < search.size(); i++) {
+//        System.out.print(i + 1);
+//        System.out.println("." + search.get(i).getDescription());
+//    }
+//                    break;
 
 //
 //    public void manageStudentsCategory() {

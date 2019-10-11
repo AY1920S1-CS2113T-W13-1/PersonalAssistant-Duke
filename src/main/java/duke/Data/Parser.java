@@ -348,6 +348,11 @@ public class Parser {
                         students.deleteStudent(index);
                         break;
 
+                    case "find":
+                        String findName = input.substring(13);
+                        students.findStudent(findName);
+                        break;
+
                     case "details":
                         //add student details
 
