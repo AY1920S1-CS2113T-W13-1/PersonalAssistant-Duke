@@ -1,7 +1,7 @@
 package duke.Data;
 
 
-import duke.sports.ManageStudents;
+import duke.Module.ManageStudents;
 import duke.Module.Goal;
 import duke.Module.Schedule;
 import duke.sports.MyClass;

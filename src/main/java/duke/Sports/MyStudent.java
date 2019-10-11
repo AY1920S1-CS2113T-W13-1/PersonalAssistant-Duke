@@ -1,5 +1,9 @@
 package duke.sports;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * Represents a student.
  */
@@ -8,17 +12,22 @@ public class MyStudent {
     /**
      * Represents the name of the student.
      */
-    private final String name;
+    private String name;
 
     /**
      * Represents the age of the student.
      */
-    private final String age;
+    private String age;
 
     /**
      * Represents the address of the student.
      */
-    private final String address;
+    private String address;
+
+    private String filePath;
+
+    private Scanner fileInput;
+
 
     /**
      * Constructor for the students.
@@ -34,6 +43,13 @@ public class MyStudent {
         this.age = myAge;
         this.address = myAddress;
     }
+
+//    public MyStudent() throws FileNotFoundException {
+//        filePath = ".\\src\\main\\java\\duke\\Data\\studentList.txt";
+//        File f = new File(filePath);
+//        fileInput = new Scanner(f);
+//        //division = new Storage(filePath).loadPMap(getMap());
+//    }
 
     /**
      * This method is to retrieve the name of the student.

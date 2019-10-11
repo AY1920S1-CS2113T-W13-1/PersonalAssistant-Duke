@@ -1,4 +1,6 @@
-package duke.sports;
+package duke.Module;
+
+import duke.sports.MyStudent;
 
 import java.util.ArrayList;
 
@@ -12,6 +14,11 @@ public class ManageStudents {
      * An array list for the list of students.
      */
     private final ArrayList<MyStudent> studentList;
+
+    /**
+     * A list of the student details
+     */
+    private ArrayList<Details> studentDetails = new ArrayList<>();
 
 //    public void loadStudentList() {
 //        Storage storage = new Storage ();
@@ -35,14 +42,6 @@ public class ManageStudents {
     private ArrayList<MyStudent> getStudentList() {
         return studentList;
     }
-
-//    public void addStudentList (Storage storage) {
-//        try {
-//            setStudentList((Objects.requireNonNull(storage.loadFile())));
-//        } catch (NullPointerException e) {
-//            System.out.println("No previous list loaded");
-//        }
-//    }
 
     /**
      * Method to list all the names of the students in the list.
@@ -124,22 +123,7 @@ public class ManageStudents {
             System.out.println(". " + search.get(i).getName());
         }
     }
-//
-//    ArrayList<Task> search = new ArrayList<>();
-//                    for (Task i : taskList.getTaskList()) {
-//        if (i.getDescription().contains(findWord)) {
-//            search.add(i);
-//        }
-//    }
-//
-//                    System.out.println("Here are the matching task in your list: ");
-//                    for (int i = 0; i < search.size(); i++) {
-//        System.out.print(i + 1);
-//        System.out.println("." + search.get(i).getDescription());
-//    }
-//                    break;
-
-//
+    
 //    public void manageStudentsCategory() {
 //        System.out.println("MANAGE STUDENTS COMMANDS:\n" +
 //                "1. student list - View all students\n" +

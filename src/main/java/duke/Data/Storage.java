@@ -3,13 +3,11 @@ package duke.Data;
 import duke.Module.TimeSlot;
 import duke.sports.MyClass;
 import duke.sports.MyPlan;
+import duke.sports.MyStudent;
 import duke.sports.MyTraining;
 import duke.Task.*;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -323,5 +321,18 @@ public class Storage {
 
     public void savePMap() {
         System.out.println("To be confirmed");
+    }
+
+    public void saveToFile(ArrayList<MyStudent> saveName) {
+        File file = new File(".\\\\src\\\\main\\\\java\\\\duke\\\\Data\\\\studentList.txt"); // Creating the textfile
+        try {
+            PrintWriter output = new PrintWriter(file);
+            for (MyStudent x : saveName) {
+                output.println(x.toString());
+            }
+            output.close();
+        } catch (IOException ex) {
+            System.out.print("ERROR: Not Available");
+        }
     }
 }

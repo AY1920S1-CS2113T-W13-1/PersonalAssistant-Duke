@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 import duke.Data.Storage;
 import duke.Module.Schedule;
-import duke.sports.ManageStudents;
+import duke.Module.ManageStudents;
 import duke.sports.MyPlan;
 import duke.Task.*;
 
