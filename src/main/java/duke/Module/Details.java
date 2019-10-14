@@ -2,6 +2,8 @@ package duke.Module;
 
 import duke.sports.MyStudent;
 
+import java.util.ArrayList;
+
 public class Details {
 
     public String studentName;

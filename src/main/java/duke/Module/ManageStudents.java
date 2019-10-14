@@ -123,7 +123,7 @@ public class ManageStudents {
             System.out.println(". " + search.get(i).getName());
         }
     }
-    
+
 //    public void manageStudentsCategory() {
 //        System.out.println("MANAGE STUDENTS COMMANDS:\n" +
 //                "1. student list - View all students\n" +
@@ -134,7 +134,16 @@ public class ManageStudents {
 //                "6. Dietary Plan\n");
 //    }
 
+//    public ArrayList<Details> getStudentDetails() {
+//
+//    }
+    public void addDetails(Details newDetail) {
+        
+
+    }
 
 
+    public void setName(String newName) {
 
+    }
 }
