@@ -13,10 +13,7 @@ import duke.sports.MyPlan;
 
 import java.io.FileNotFoundException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Parser is the controller for the string inputs received by the standard input.
@@ -334,10 +331,10 @@ public class Parser {
         case "student":
                 switch (word[1]) {
                     case "add/":
-                        String[] splitByComma = input.split("/ ");
-                        String name = splitByComma[1];
-                        String age = splitByComma[2];
-                        String address = splitByComma[3];
+                        String[] splitBySlash = input.split("/ ");
+                        String name = splitBySlash[1];
+                        String age = splitBySlash[2];
+                        String address = splitBySlash[3];
                         MyStudent myNewStudent = new MyStudent(name, age, address);
                         students.addStudent(myNewStudent);
                         break;
@@ -357,6 +354,17 @@ public class Parser {
                         //add student details
 
                     case "edit":
+                        switch (word[2]) {
+                            case "name":
+                                Scanner inputName = new Scanner(System.in);
+                                String studentName = inputName.nextLine();
+                                students.findStudent(studentName);
+                                Scanner changeName = new Scanner(System.in);
+                                String newName = changeName.nextLine();
+                                students.setName(newName);
+
+                        }
+
                         // editStudentDetails(detail)
 
                     case "list":
