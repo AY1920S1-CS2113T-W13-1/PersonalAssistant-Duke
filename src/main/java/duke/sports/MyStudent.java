@@ -29,6 +29,18 @@ public class MyStudent {
     private Scanner fileInput;
 
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     /**
      * Constructor for the students.
      *
@@ -37,8 +49,8 @@ public class MyStudent {
      * @param myAddress address of the student
      */
     @SuppressWarnings("checkstyle:HiddenField")
-    public MyStudent(final String myName, final String myAge,
-                     final String myAddress) {
+    public MyStudent(String myName, String myAge,
+                      String myAddress) {
         this.name = myName;
         this.age = myAge;
         this.address = myAddress;
