@@ -6,16 +6,13 @@ import duke.sports.MyPlan;
 import duke.sports.MyStudent;
 import duke.sports.MyTraining;
 import duke.Task.*;
+import duke.sports.MyStudent;
 
 import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Storage handles all the loading and saving of data
@@ -335,4 +332,25 @@ public class Storage {
             System.out.print("ERROR: Not Available");
         }
     }
+
+
+    private Formatter x;
+
+    public void openStudentListFile() {
+        try {
+            x = new Formatter("studentList.txt");
+
+        } catch (Exception e){
+            System.out.println("No such files");
+        }
+    }
+
+    public void updateStudentList() {
+        x.format("Student Name, student age, Student address");
+    }
+
+    public void closeFile() {
+        x.close();
+    }
+
 }
